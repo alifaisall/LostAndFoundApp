@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".Fragments.LostFragment">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardHome"
+        android:layout_width="334dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="100dp"
+        android:foregroundGravity="center"
+        app:cardBackgroundColor="#ECF0F1"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="117dp"
+            android:layout_height="124dp"
+            android:layout_gravity="center|left"
+            android:layout_marginLeft="25dp"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@drawable/bag" />
+
+        <TextView
+            android:id="@+id/tvTitleCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="55dp"
+            android:fontFamily="@font/poppins_semibold_font"
+            android:text="Bag"
+            android:textColor="#3A3E59"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvDescriptionCard"
+            android:layout_width="153dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="i lost my bag near lorem"
+            android:textColor="#3A3E59"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvLocationCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="100dp"
+            android:drawableLeft="@drawable/ic_card_location"
+            android:drawablePadding="2dp"
+            android:fontFamily="@font/poppins_regular_font"
+            android:paddingLeft="-3dp"
+            android:text="Sulaymaniyah"
+            android:textColor="#3A3E59"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnClaim"
+            android:layout_width="112dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/card_round_btn"
+            android:fontFamily="@font/poppins_medium"
+            android:onClick="navigateToCardDetails"
+            android:text="Found"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/btnGallery"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnGallery"
+            tools:ignore="TouchTargetSizeCheck" />
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>
