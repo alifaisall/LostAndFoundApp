@@ -10,18 +10,13 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.lostandfound.Fragments.AddItemFragment;
-import com.example.lostandfound.Fragments.FoundFragment;
 import com.example.lostandfound.Fragments.HomeFragment;
-import com.example.lostandfound.Fragments.LostFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
 
     HomeFragment homeFragment = new HomeFragment();
-    LostFragment lostFragment = new LostFragment();
-    FoundFragment foundFragment = new FoundFragment();
 
 
     @Override
@@ -41,15 +36,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,homeFragment).commit();
                         return true;
-                    case R.id.lost:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,lostFragment).commit();
-                        return true;
                     case R.id.additem:
                           Intent addItem = new Intent("addItem");
                           startActivity(addItem);
-                        return true;
-                    case R.id.found:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,foundFragment).commit();
                         return true;
                     case R.id.account:
                         Intent acc = new Intent("account");

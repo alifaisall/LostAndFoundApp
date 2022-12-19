@@ -2,19 +2,10 @@ package com.example.lostandfound;
 
 import android.content.Intent;
 import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
-
-import com.example.lostandfound.Fragments.SignInFragment;
-import com.example.lostandfound.Fragments.AddItemFragment;
-import com.example.lostandfound.Fragments.FoundFragment;
-import com.example.lostandfound.Fragments.HomeFragment;
-import com.example.lostandfound.Fragments.LostFragment;
 
 public class AddItem extends AppCompatActivity {
 
