@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/card_round_btn.xml" value="0.1835" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/custom_spinner.xml" value="0.1835" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ed_line_color_selected.xml" value="0.1835" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/edit_text_border.xml" value="0.2265" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_account.xml" value="0.1835" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_account___icon.xml" value="0.2265" />
@@ -22,12 +23,13 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/round_btn.xml" value="0.2265" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/spinner_ui.xml" value="0.2265" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/font/font.xml" value="0.284375" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/account_created.xml" value="0.4" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/account_created.xml" value="0.176" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_add_item.xml" value="0.136" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_card_details.xml" value="0.2" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_home.xml" value="0.152" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_sign_up.xml" value="0.136" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_splash.xml" value="0.152" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/custom_actionbar.xml" value="0.264" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_account.xml" value="0.2" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_add_found_item.xml" value="0.2" />
