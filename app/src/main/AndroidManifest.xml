@@ -37,17 +37,17 @@
             android:name=".AddItem"
             android:exported="true">
             <intent-filter>
-                <action android:name="AddItem" />
+                <action android:name="addItem" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".SignUp"
+            android:name=".Account"
             android:exported="true">
             <intent-filter>
-                <action android:name="signup" />
+                <action android:name="account" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.lostandfound.Fragments.AccountFragment;
 import com.example.lostandfound.Fragments.AddItemFragment;
 import com.example.lostandfound.Fragments.FoundFragment;
 import com.example.lostandfound.Fragments.HomeFragment;
@@ -22,11 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     HomeFragment homeFragment = new HomeFragment();
     LostFragment lostFragment = new LostFragment();
-    AddItemFragment addItemFragment = new AddItemFragment();
     FoundFragment foundFragment = new FoundFragment();
-    AccountFragment accountFragment = new AccountFragment();
-
-
 
 
     @Override
@@ -50,15 +45,15 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,lostFragment).commit();
                         return true;
                     case R.id.additem:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,addItemFragment).commit();
-//                          Intent i = new Intent("AddItem");
-//                          startActivity(i);
+                          Intent addItem = new Intent("addItem");
+                          startActivity(addItem);
                         return true;
                     case R.id.found:
                         getSupportFragmentManager().beginTransaction().replace(R.id.container,foundFragment).commit();
                         return true;
                     case R.id.account:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,accountFragment).commit();
+                        Intent acc = new Intent("account");
+                        startActivity(acc);
                         return true;
 
                 }
@@ -70,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
     public void uploadImage(View v) {
         Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(gallery, 3);
-    }
-
-    public void navigateToSignUp(View v) {
-        Intent signUpScreen = new Intent("signup");
-        startActivity(signUpScreen);
     }
 
     public void navigateToCardDetails(View v) {

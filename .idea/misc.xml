@@ -21,9 +21,9 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_add_item.xml" value="0.136" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_card_details.xml" value="0.2" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_main.xml" value="0.176" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_sign_up.xml" value="0.2" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/activity_sign_up.xml" value="0.136" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/custom_actionbar.xml" value="0.264" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_account.xml" value="0.152" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_account.xml" value="0.2" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_add_found_item.xml" value="0.2" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_add_item.xml" value="0.176" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_add_lost_item.xml" value="0.25416666666666665" />
@@ -31,6 +31,8 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_found.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_home.xml" value="0.152" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_lost.xml" value="0.2" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_sign_up.xml" value="0.152" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/layout/fragment_signin.xml" value="0.152" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/menu/bottommenu.xml" value="0.264" />
       </map>
     </option>

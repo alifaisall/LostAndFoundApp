@@ -6,13 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".AddItem">
 
+    <ImageView
+        android:id="@+id/backArrow4"
+        android:layout_width="61dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="20dp"
+        android:onClick="back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_back"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
     <TextView
         android:id="@+id/tvAddItem3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/montserrat_font"
         android:gravity="top"
         android:text="Add an item"
@@ -176,16 +189,4 @@
         app:layout_constraintTop_toBottomOf="@+id/btnGallery3"
         tools:ignore="TouchTargetSizeCheck" />
 
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/bottomNav"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#3A3E59"
-        app:itemIconTint="@drawable/nav_item_color_selected"
-        app:itemTextColor="@drawable/nav_item_color_selected"
-        app:labelVisibilityMode="labeled"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottommenu" />
 </android.support.constraint.ConstraintLayout>

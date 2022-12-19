@@ -4,17 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".SignUp">
+    tools:context=".Fragments.SignUpFragment">
 
     <TextView
-        android:id="@+id/login2"
+        android:id="@+id/login3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         android:fontFamily="@font/montserrat_font"
         android:gravity="top"
         android:text="Create Account"
@@ -26,7 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edEmailSignUp"
+        android:id="@+id/edEmailSignUp2"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -44,11 +43,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edNameSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/edNameSignUp2"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
-        android:id="@+id/edPassSignUp"
+        android:id="@+id/edPassSignUp2"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -65,41 +64,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edPhoneSignUp"
+        app:layout_constraintTop_toBottomOf="@+id/edPhoneSignUp2"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
-        android:id="@+id/btnSignUp"
+        android:id="@+id/btnSignUp2"
         android:layout_width="162dp"
         android:layout_height="52dp"
+        android:layout_marginStart="176dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/round_btn"
         android:fontFamily="@font/poppins_semibold_font"
         android:text="SIGN UP"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/edPassSignUp"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="@+id/edPassSignUp2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edPassSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/edPassSignUp2" />
 
     <TextView
-        android:id="@+id/tvSignIn"
+        android:id="@+id/tvSignIn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="72dp"
         android:fontFamily="@font/poppins_regular_font"
+        android:onClick="showLogin"
         android:text="Sign In"
         android:textColor="#3A3E59"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
@@ -113,7 +112,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/edNameSignUp"
+        android:id="@+id/edNameSignUp2"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -130,10 +129,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login2" />
+        app:layout_constraintTop_toBottomOf="@+id/login3" />
 
     <EditText
-        android:id="@+id/edPhoneSignUp"
+        android:id="@+id/edPhoneSignUp2"
         android:layout_width="298dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
@@ -150,19 +149,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edEmailSignUp" />
+        app:layout_constraintTop_toBottomOf="@+id/edEmailSignUp2" />
 
     <ImageView
-        android:id="@+id/backArrow"
+        android:id="@+id/backArrow3"
         android:layout_width="61dp"
         android:layout_height="44dp"
-        android:layout_marginTop="44dp"
-        android:onClick="back"
+        android:layout_marginTop="20dp"
+        android:onClick="backToSignIn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_arrow_back"
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
 </android.support.constraint.ConstraintLayout>
