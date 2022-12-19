@@ -1,38 +1,57 @@
 package com.example.lostandfound.DatabaseAndTables;
 
+
 public class Item {
 
-    int id;
+    long id;
+    long uid;
     String type;
     String title;
     String description;
     String category;
+    String status;
     String date;
     String location;
     String image;
 
-    public Item() {
+    public Item() {}
 
-    }
-
-    public Item(int id, String type, String title, String description, String category, String date, String location, String image) {
-        this.id = id;
+    public Item(String type, String title, String description, String category,String status, String date, String location, String image) {
         this.type = type;
         this.title = title;
         this.description = description;
         this.category = category;
+        this.status = status;
         this.date = date;
         this.location = location;
         this.image = image;
     }
 
-    public int getId() {
+    public Item(long id,long uid, String type, String title, String description, String category,String status, String date, String location, String image) {
+        this.id = id;
+        this.uid = uid;
+        this.type = type;
+        this.title = title;
+        this.description = description;
+        this.category = category;
+        this.status = status;
+        this.date = date;
+        this.location = location;
+        this.image = image;
+    }
+
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
+
+    public long getUid() {return uid;}
+
+    public void setUid(long uid) {this.uid = uid;}
 
     public String getType() {
         return type;
@@ -64,6 +83,14 @@ public class Item {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getDate() {

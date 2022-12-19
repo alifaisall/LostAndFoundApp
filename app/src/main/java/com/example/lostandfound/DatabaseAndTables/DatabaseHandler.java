@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.UUID;
+
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 1;
@@ -21,9 +23,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     private static final String TABLE_ITEM = "item";
     private static final String IID = "item_id";
+    private static final String IUID = "item_uid";
     private static final String TYPE = "type";
     private static final String TITLE = "title";
     private static final String DESCRIPTION = "description";
+    private static final String STATUS = "status";
     private static final String CATEGORY = "category";
     private static final String DATE = "date";
     private static final String LOCATION = "location";
@@ -39,8 +43,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sqlTableUser = "CREATE TABLE " + TABLE_USER + "("+ UID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," + NAME + " TEXT NOT NULL,"+ EMAIL + " TEXT NOT NULL," + PHONE + " TEXT NOT NULL," + PASS + " TEXT NOT NULL" + ")";
-        String sqlTableItem = "CREATE TABLE " + TABLE_ITEM + "("+ IID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," + TYPE + " TEXT NOT NULL," + TITLE + " TEXT NOT NULL," + DESCRIPTION + " TEXT NOT NULL," + CATEGORY + " TEXT NOT NULL," + DATE + " TEXT NOT NULL," + LOCATION + " TEXT NOT NULL," + IMAGE + " TEXT NOT NULL" +")";
+        String sqlTableUser = "CREATE TABLE " + TABLE_USER + "("+ UID + " LONG PRIMARY KEY AUTOINCREMENT NOT NULL," + NAME + " TEXT NOT NULL,"+ EMAIL + " TEXT NOT NULL," + PHONE + " TEXT NOT NULL," + PASS + " TEXT NOT NULL" + ")";
+        String sqlTableItem = "CREATE TABLE " + TABLE_ITEM + "("+ IID + " LONG PRIMARY KEY AUTOINCREMENT NOT NULL," +IUID+" LONG,"+ TYPE + " TEXT NOT NULL," + TITLE + " TEXT NOT NULL," + DESCRIPTION + " TEXT NOT NULL," + CATEGORY + " TEXT NOT NULL," + DATE + " TEXT NOT NULL," + LOCATION + " TEXT NOT NULL," + IMAGE + " TEXT NOT NULL," +" FOREIGN KEY ("+ IUID +") REFERENCES "+TABLE_USER+"("+UID+")" +")";
         db.execSQL(sqlTableUser);
         db.execSQL(sqlTableItem);
 
@@ -89,7 +93,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Delete User By ID
-    public void deleteUserByID(int id) {
+    public void deleteUserByID(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_USER, UID + " = ?",
                 new String[]{String.valueOf(id)});
@@ -97,7 +101,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Get User By ID
-    User getUserById(int id) {
+    User getUserById(long id) {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -106,7 +110,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (cursor != null)
             cursor.moveToFirst();
 
-        int uid = cursor.getInt(0);
+        long uid = cursor.getLong(0);
         String name = cursor.getString(1);
         String email = cursor.getString(2);
         String phone = cursor.getString(3);
@@ -121,11 +125,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Add Item
-    void addItem(Item item) {
+    public void addItem(Item item) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues cv = new ContentValues();
         cv.put(IID,item.getId());  // Item ID
+        cv.put(IUID,item.getUid());  // User ID
         cv.put(TYPE, item.getType());
         cv.put(TITLE, item.getTitle());
         cv.put(DESCRIPTION, item.getDescription());
@@ -148,6 +153,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(TITLE, item.getTitle());
         values.put(DESCRIPTION, item.getDescription());
         values.put(CATEGORY, item.getCategory());
+        values.put(STATUS, item.getStatus());
         values.put(DATE, item.getDate());
         values.put(LOCATION, item.getLocation());
         values.put(IMAGE, item.getImage());
@@ -158,7 +164,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Delete Item By ID
-    public void deleteItemByID(int id) {
+    public void deleteItemByID(long id) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_ITEM, IID + " = ?",
                 new String[]{String.valueOf(id)});
@@ -166,25 +172,27 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Get Item By ID
-    Item getItemById(int id) {
+    Item getItemById(long id) {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_ITEM, new String[]{IID, TYPE, TITLE, DESCRIPTION, CATEGORY, DATE, LOCATION, IMAGE}, IID + "=?",
+        Cursor cursor = db.query(TABLE_ITEM, new String[]{IID, UID, TYPE, TITLE, DESCRIPTION, CATEGORY, STATUS, DATE, LOCATION, IMAGE}, IID + "=?",
                 new String[]{String.valueOf(id)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
-        int iid = cursor.getInt(0);
-        String type = cursor.getString(1);
-        String title = cursor.getString(2);
-        String description = cursor.getString(3);
-        String category = cursor.getString(4);
-        String date = cursor.getString(5);
-        String location = cursor.getString(6);
-        String image = cursor.getString(7);
+        long iid = cursor.getLong(0);
+        long uid = cursor.getLong(1);
+        String type = cursor.getString(2);
+        String title = cursor.getString(3);
+        String description = cursor.getString(4);
+        String category = cursor.getString(5);
+        String status = cursor.getString(6);
+        String date = cursor.getString(7);
+        String location = cursor.getString(8);
+        String image = cursor.getString(9);
 
-        Item item = new Item(iid, type, title, description, category, date, location, image);
+        Item item = new Item(iid, uid, type, title, description, category, status, date, location, image);
         cursor.close();
         db.close();
 
@@ -192,7 +200,61 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     }
 
+    Item getItemByType(String typeParam) {
 
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_ITEM, new String[]{IID, UID, TYPE, TITLE, DESCRIPTION, CATEGORY, STATUS, DATE, LOCATION, IMAGE}, TYPE + "=?",
+                new String[]{String.valueOf(typeParam)}, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        long iid = cursor.getLong(0);
+        long uid = cursor.getLong(1);
+        String type = cursor.getString(2);
+        String title = cursor.getString(3);
+        String description = cursor.getString(4);
+        String category = cursor.getString(5);
+        String status = cursor.getString(6);
+        String date = cursor.getString(7);
+        String location = cursor.getString(8);
+        String image = cursor.getString(9);
+
+        Item item = new Item(iid, uid, type, title, description, category, status, date, location, image);
+        cursor.close();
+        db.close();
+
+        return item;
+
+    }
+
+    Item getAllItems() {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_ITEM, new String[]{IID, UID, TYPE, TITLE, DESCRIPTION, CATEGORY, STATUS, DATE, LOCATION, IMAGE}, null,
+                null, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        long iid = cursor.getLong(0);
+        long uid = cursor.getLong(1);
+        String type = cursor.getString(2);
+        String title = cursor.getString(3);
+        String description = cursor.getString(4);
+        String category = cursor.getString(5);
+        String status = cursor.getString(6);
+        String date = cursor.getString(7);
+        String location = cursor.getString(8);
+        String image = cursor.getString(9);
+
+        Item item = new Item(iid, uid, type, title, description, category, status, date, location, image);
+        cursor.close();
+        db.close();
+
+        return item;
+
+    }
 
 
 
