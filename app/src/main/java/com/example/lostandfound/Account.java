@@ -41,7 +41,7 @@ public class Account extends AppCompatActivity {
         super.onBackPressed();
     }
     public void backToSignIn(View v) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.accountContainer, signInFragment).commit();
+        super.onBackPressed();
     }
 
 }
