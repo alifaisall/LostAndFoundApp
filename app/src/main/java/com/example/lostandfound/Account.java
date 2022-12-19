@@ -40,8 +40,5 @@ public class Account extends AppCompatActivity {
     public void backToMain(View v) {
         super.onBackPressed();
     }
-    public void backToSignIn(View v) {
-        super.onBackPressed();
-    }
 
 }
