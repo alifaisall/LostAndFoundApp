@@ -4,11 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/card_round_btn.xml" value="0.1835" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/custom_spinner.xml" value="0.1835" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/edit_text_border.xml" value="0.2265" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_account.xml" value="0.1835" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_account___icon.xml" value="0.2265" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_add___icon.xml" value="0.2265" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1835" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.1835" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_card_location.xml" value="0.2265" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_found___icon.xml" value="0.2265" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_img.xml" value="0.1835" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_lost___icon.xml" value="0.2265" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_lost___iconn.xml" value="0.2265" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/LostandFound/app/src/main/res/drawable/ic_sort.xml" value="0.2265" />
